@@ -16,7 +16,7 @@ if (isset($_POST['email'])
     $email = $_POST['email'];
     $date = $_POST['user_date'];
     $token = $_POST['token'];
-    $password = $encryptDecryptSecurityObject->encrypt($_POST['password']);
+    $password = $_POST['password'];
     $result = $dbOperationsObject->isEmailExist($email);
     if (mysqli_num_rows($result) > 0) {
         $response['success'] = 0;
